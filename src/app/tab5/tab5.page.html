@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>个人信息</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- 这里放置您的个人信息内容 -->
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="头像" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>姓名：张三</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>年龄：25岁</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>性别：男</ion-label>
+        </ion-item>
+        <!-- 添加更多个人信息项 -->
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

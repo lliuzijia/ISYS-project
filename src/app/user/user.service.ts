@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { UserInfo } from './user-info.model';
-//user是储存用户信息
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  // 假设您的用户列表和聊天消息都存储在该服务中
+  // Assume your user list and chat messages are stored in this service
 
   private userList: UserInfo[] = [
-    { id: 1, name: '张三', avatar: 'path-to-avatar-1', description: '我是张三，很高兴认识你' ,phone: '13812345671',email: 'zhangsan@example.com',address: '北京市朝阳区',company : 'ABC公司',department : '销售部',position: '主管',notes: '张三备注信息'},
-    { id: 2, name: '李四', avatar: 'path-to-avatar-2', description: '我是李四，很高兴认识你', phone: '13812345672', email: 'lisi@example.com', address: '上海市浦东新区' ,company : 'DEF公司',department : '销售部',position: '主管',notes: '李四备注信息'},
-    { id: 3, name: '王五', avatar: 'path-to-avatar-3', description: '我是王五，很高兴认识你', phone: '13812345673', email: 'wangwu@example.com', address: '广州市天河区',company : 'GHI公司',department : '销售部',position: '主管',notes: '王五备注信息' },
-    { id: 4, name : '赵六', avatar: 'path-to-avatar-4', description: '我是赵六，很高兴认识你', phone: '13812345674', email: 'zhaoliu@example.com', address: '深圳市南山区',company : 'JKL公司',department : '销售部',position: '主管',notes: '赵六备注信息'}
-    // 其他用户...
+    { id: 1, name: 'Zhang San', avatar: 'path-to-avatar-1', description: 'I am Zhang San, nice to meet you.', phone: '13812345671', email: 'zhangsan@example.com', address: 'Chaoyang District, Beijing', company: 'ABC Company', department: 'Sales Department', position: 'Supervisor', notes: 'Notes for Zhang San' },
+    { id: 2, name: 'Li Si', avatar: 'path-to-avatar-2', description: 'I am Li Si, nice to meet you.', phone: '13812345672', email: 'lisi@example.com', address: 'Pudong New Area, Shanghai', company: 'DEF Company', department: 'Sales Department', position: 'Supervisor', notes: 'Notes for Li Si' },
+    { id: 3, name: 'Wang Wu', avatar: 'path-to-avatar-3', description: 'I am Wang Wu, nice to meet you.', phone: '13812345673', email: 'wangwu@example.com', address: 'Tianhe District, Guangzhou', company: 'GHI Company', department: 'Sales Department', position: 'Supervisor', notes: 'Notes for Wang Wu' },
+    { id: 4, name: 'Zhao Liu', avatar: 'path-to-avatar-4', description: 'I am Zhao Liu, nice to meet you.', phone: '13812345674', email: 'zhaoliu@example.com', address: 'Nanshan District, Shenzhen', company: 'JKL Company', department: 'Sales Department', position: 'Supervisor', notes: 'Notes for Zhao Liu' }
+    // Other users...
   ];
 
   private chatMessages: { [userId: number]: string[] } = {
     1: ['Message 1', 'Message 2', 'Message 3'],
     2: ['Message 4', 'Message 5', 'Message 6'],
-    // 其他用户的聊天消息...
+    // Chat messages for other users...
   };
 
   constructor() { }

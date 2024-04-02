@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { CheckInPage } from '../check-in/check-in.page'; // 导入签到页面
+import { CheckInPage } from '../check-in/check-in.page'; // Import CheckInPage
 
 @Component({
   selector: 'app-tab1',
@@ -9,9 +9,9 @@ import { CheckInPage } from '../check-in/check-in.page'; // 导入签到页面
 })
 export class Tab1Page {
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController) { }
 
   goToCheckInPage() {
-    this.navCtrl.navigateForward('/check-in'); // 导航到签到页面
+    this.navCtrl.navigateForward('/check-in'); // Navigate to CheckInPage
   }
 }

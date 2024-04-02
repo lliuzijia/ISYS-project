@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>通讯录</ion-title>
+    <ion-title>Contacts</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content color="light">
-  <!-- 添加朋友模块 -->
-  <ion-button expand="block" (click)="goToNewFriendPage()">添加朋友</ion-button>
+  <!-- Add Friend Module -->
+  <ion-button expand="block" (click)="goToNewFriendPage()">Add Friend</ion-button>
 </ion-content>
-<!-- 通讯录模块 -->
+
+<!-- Contacts Module -->
 <ion-content color="light">
   <ion-list [inset]="true">
     <ion-item-sliding *ngFor="let user of userList" (click)="openUserDetails(user.id)">

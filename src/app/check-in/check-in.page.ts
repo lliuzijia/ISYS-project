@@ -15,8 +15,8 @@ export class CheckInPage {
 
   async checkIn() {
     const alert = await this.alertController.create({
-      header: '打卡成功',
-      message: '您已成功完成打卡。',
+      header: 'Check-In Successful',
+      message: 'You have successfully checked in.',
       buttons: ['OK']
     });
 

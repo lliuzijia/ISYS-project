@@ -10,5 +10,5 @@ export interface UserInfo {
   department: string;
   position: string;
   notes: string;
-  // 其他用户属性...
+  // Other user properties...
 }

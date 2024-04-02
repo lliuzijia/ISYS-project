@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../user/user.service'; // 导入 UserService
-import { UserInfo } from '../user/user-info.model'; // 导入 UserInfo 模型
-// UserDetails是储存通讯录列表内容
+import { UserService } from '../user/user.service'; // Import UserService
+import { UserInfo } from '../user/user-info.model'; // Import UserInfo model
+
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.page.html',
@@ -12,7 +12,7 @@ export class UserDetailsPage implements OnInit {
   user: UserInfo;
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
-    this.user = { id: -1, name: '', avatar: '', description: '', phone: '',email: '',address: '',company: '',department: '',position: '',notes: ''};
+    this.user = { id: -1, name: '', avatar: '', description: '', phone: '', email: '', address: '', company: '', department: '', position: '', notes: '' };
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class UserDetailsPage implements OnInit {
       if (user) {
         this.user = user;
       } else {
-        // 处理未找到用户的情况，例如显示错误消息或者重定向到其他页面
+        // Handle the case where user is not found, e.g., display error message or redirect to another page
       }
     });
   }

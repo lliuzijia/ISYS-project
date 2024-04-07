@@ -1,15 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tab1"></ion-back-button>
-    </ion-buttons>
     <ion-title>
-      Sign-in Page
+      Check-In
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" (click)="checkIn()">Check In</ion-button>
-  <ion-button expand="block" (click)="checkOut()">Check Out</ion-button>
-</ion-content>
+  <ion-card>
+    <ion-card-header>
+      Current Location
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="currentPosition">Latitude: {{ currentPosition.coords.latitude }}</p>
+      <p *ngIf="currentPosition">Longitude: {{ currentPosition.coords.longitude }}</p>
+      <p *ngIf="currentTime">Current Time: {{ currentTime }}</p>
+      <ion-button expand="block" (click)="checkIn()">Check In</ion-button>
+      <ion-button expand="block" (click)="checkOut()">Check Out</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+<ion-list [inset]="true">
+  <ion-item *ngFor="let record of checkInRecords" [button]="true" detail="false">
+    <div slot="start">
+      <ion-icon [name]="record.checkIn ? 'briefcase-outline' : 'footsteps-outline'"></ion-icon>
+    </div>
+    <ion-label>
+      &nbsp;&nbsp;Location: {{ record.latitude }}, {{ record.longitude }}
+    </ion-label>
+    <div class="metadata-end-wrapper" slot="end">
+      <ion-button fill="clear" [disabled]="true">
+        <ion-icon [name]="record.checkIn ? 'checkmark-done-circle-outline' : 'close-circle-outline'"></ion-icon>
+        {{ record.checkIn ? 'Check In' : 'Check Out' }}
+      </ion-button>
+      <ion-note color="medium">{{ record.time }}</ion-note>
+      <ion-icon color="medium" name="chevron-forward"></ion-icon>
+    </div>
+  </ion-item>
+</ion-list>

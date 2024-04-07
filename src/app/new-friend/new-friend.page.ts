@@ -1,27 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-new-friend',
   templateUrl: './new-friend.page.html',
   styleUrls: ['./new-friend.page.scss'],
 })
-export class NewFriendPage implements OnInit {
+export class NewFriendPage {
 
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor() { }
 
-
-  ngOnInit() {
-  }
-
+  // 确保在这里定义了 scan 方法
   scan() {
-  this.barcodeScanner.scan().then(barcodeData => {
-    // 扫描成功
-    console.log('Barcode data', barcodeData);
-  }).catch(err => {
-    // 扫描失败
-    console.log('Error', err);
-  });
-}
+    // 扫描操作的逻辑
+  }
 
 }

@@ -22,4 +22,14 @@ export class CheckInPage {
 
     await alert.present();
   }
+
+  async checkOut() {
+    const alert = await this.alertController.create({
+      header: 'Check-Out Successful',
+      message: 'You have successfully checked Out.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }

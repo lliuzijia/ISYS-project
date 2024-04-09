@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <!--添加返回按钮-->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>用户注册</ion-title>
+    <!--为保存按钮添加点击事件-->
+    <ion-button slot="end" size="small" (click)="save()">保存</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">用户名</ion-label>
+      <ion-input [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">密码</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">联系电话</ion-label>
+      <ion-input [(ngModel)]="user.phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">昵称</ion-label>
+      <ion-input [(ngModel)]="user.nickname"></ion-input>
+    </ion-item>
+
+    <ion-radio-group [(ngModel)]="user.gender">
+      <ion-list-header>
+        <ion-label>
+          性别
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>男</ion-label>
+        <ion-radio value="M"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>女</ion-label>
+        <ion-radio value="F"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+
+</ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service'; // Import UserService
-import { UserInfo } from '../user/user-info.model'; // Import UserInfo model
+import { Users } from '../user/user-info.model'; // Import UserInfo model
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class Tab4Page implements OnInit {
   // User list
-  userList: UserInfo[] = [];
+  userList: Users[] = [];
 
   constructor(private userService: UserService, private router: Router) { }
 

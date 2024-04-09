@@ -1,14 +1,19 @@
-export interface UserInfo {
-  id: number;
-  name: string;
-  avatar: string;
-  description: string;
+export class Users {
+  Usersid: string;
+  password: string;
+  roleid: string;
+  username: string;
   phone: string;
-  email: string;
-  address: string;
-  company: string;
-  department: string;
-  position: string;
-  notes: string;
-  // Other user properties...
+  nickname: string;
+  gender: string;
+
+  constructor() {
+    this.Usersid = "";
+    this.password = "";
+    this.roleid = "";
+    this.username = "";
+    this.phone = "";
+    this.nickname = "";
+    this.gender = "";
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // 导入 Router
 
 @Component({
   selector: 'app-tab5',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab5Page {
 
-  constructor() {}
+  constructor(private router: Router) { }
 
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { UserService } from '../user/user.service'; // Import UserService
-import { UserInfo } from '../user/user-info.model'; // Import UserInfo model
+import { Users } from '../user/user-info.model'; // Import UserInfo model
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
-  userList: UserInfo[] = [];
+  userList: Users[] = [];
 
   constructor(private userService: UserService, private navCtrl: NavController, private router: Router) { }
 

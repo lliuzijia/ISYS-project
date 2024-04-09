@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { IonicModule } from '@ionic/angular'; // 添加此行
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   {
     path: '',
@@ -21,13 +22,26 @@ const routes: Routes = [
   {
     path: 'new-friend',
     loadChildren: () => import('./new-friend/new-friend.module').then( m => m.NewFriendPageModule)
+  },
+  {
+    path: 'regist',
+    loadChildren: () => import('./page/regist/regist.module').then( m => m.RegistPageModule)
+  },
+  {
+    path: 'login', component: LoginComponent 
+    
   }
+
+
+
+
 
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    IonicModule // 添加 IonicModule
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

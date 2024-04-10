@@ -13,4 +13,7 @@ export class Tab5Page {
   navigateToLogin() {
     this.router.navigate(['/login']);
   }
+  navigateToRegister() {
+    this.router.navigate(['/regist']); // 根据你的路由配置导航到注册页面
+  }
 }

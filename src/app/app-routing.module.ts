@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular'; // 添加此行
-import { LoginComponent } from './components/login/login.component';
+// 导入注册页面组件
+
+
+
 const routes: Routes = [
   {
     path: '',
@@ -9,34 +12,30 @@ const routes: Routes = [
   },
   {
     path: 'check-in',
-    loadChildren: () => import('./check-in/check-in.module').then( m => m.CheckInPageModule)
+    loadChildren: () => import('./check-in/check-in.module').then(m => m.CheckInPageModule)
   },
   {
     path: 'chat/:id',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatPageModule)
   },
   {
     path: 'user-details/:id',
-    loadChildren: () => import('./user-details/user-details.module').then( m => m.UserDetailsPageModule)
+    loadChildren: () => import('./user-details/user-details.module').then(m => m.UserDetailsPageModule)
   },
   {
     path: 'new-friend',
-    loadChildren: () => import('./new-friend/new-friend.module').then( m => m.NewFriendPageModule)
+    loadChildren: () => import('./new-friend/new-friend.module').then(m => m.NewFriendPageModule)
   },
   {
     path: 'regist',
-    loadChildren: () => import('./page/regist/regist.module').then( m => m.RegistPageModule)
+    loadChildren: () => import('./page/regist/regist.module').then(m => m.RegistPageModule)
   },
   {
-    path: 'login', component: LoginComponent 
-    
-  }
-
-
-
-
-
+    path: 'login',
+    loadChildren: () => import('./page/login/login.module').then(m => m.LoginPageModule)
+  },
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),

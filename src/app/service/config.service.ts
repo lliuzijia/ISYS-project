@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
-  // 这里定义您的配置信息，例如服务器的主机地址
-  HOST = 'http://example.com';
+  // 定义服务器基本地址
+  BASE_URL = 'http://localhost:3060';
 
   constructor() { }
 
+  // 获取注册用户端点地址
+  getRegisterUserUrl(): string {
+    return `${this.BASE_URL}/api/regist`;
+  }
 }

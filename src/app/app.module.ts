@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AuthService } from './service/auth.service'; // 确保在这里导入 AuthService
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import { AuthService } from './service/auth.service'; // 确保在这里导入 A
     IonicModule.forRoot(),
     AppRoutingModule,
     RouterModule, // 确保导入 RouterModule
-    HttpClientModule // 添加 HttpClientModule
+    HttpClientModule, // 添加 HttpClientModule
+    FormsModule
   ],
   providers: [
     StatusBar,

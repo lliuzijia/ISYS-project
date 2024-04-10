@@ -12,6 +12,7 @@ export class ChatPage implements OnInit {
   userId: number = -1;
   user: Users = {
     Usersid: '',
+    email: '',
     password: '',
     roleid: '',
     username: '',

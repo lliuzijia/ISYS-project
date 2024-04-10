@@ -10,14 +10,16 @@ export class AuthService {
 
   constructor(private http: HttpClient, private config: ConfigService) { }
 
-  // 添加或更新用户信息
-  private addOrUpdateUserUrl = this.config.HOST + "/public/saveUser";
-  addOrUpdateUser(users: Users) {
-    return this.http.post(this.addOrUpdateUserUrl, users).toPromise();
+  // 更新用户信息的URL
+  private updateUserUrl = this.config.BASE_URL + "/api/updateUser";
+
+  // 更新用户信息
+  updateUser(user: Users) {
+    return this.http.put(this.updateUserUrl, user).toPromise();
   }
 
   // 用户登录
-  private loginUrl = this.config.HOST + "/public/login";
+  private loginUrl = this.config.BASE_URL + "/public/login";
   login(username: string, password: string) {
     let parm = {
       "username": username,
@@ -26,4 +28,9 @@ export class AuthService {
     return this.http.post(this.loginUrl, parm).toPromise();
   }
 
+  // 注册新用户
+  registerUser(user: Users) {
+    const registerUserUrl = this.config.getRegisterUserUrl();
+    return this.http.post(registerUserUrl, user).toPromise();
+  }
 }

@@ -7,8 +7,24 @@ import { Router } from '@angular/router'; // 导入 Router
   styleUrls: ['tab5.page.scss']
 })
 export class Tab5Page {
+  user = {
+    name: 'John Doe',
+    age: 25,
+    gender: 'Male'
+  };
+
+  isEditable = false;  
 
   constructor(private router: Router) { }
+
+  updateProfile() {
+    console.log('Updated Profile:', this.user);
+    this.isEditable = false;  
+  }
+
+  enableEditing() {
+    this.isEditable = true; 
+  }
 
   navigateToLogin() {
     this.router.navigate(['/login']);
